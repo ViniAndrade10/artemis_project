@@ -46,3 +46,23 @@ def select_file():
     botao_selecionar.pack(pady=20)
 
     root.mainloop()
+
+
+def add_indicators():
+    print("Type the indicators you want...")
+    indicators_list = list()
+    decision = True
+    while decision:
+        indicators_list.append(input("Type an indicador: "))
+        value = input("Would you like to get more indicators? [y / n]")
+        if value.lower() == "y" or value.lower() == "yes":
+            decision = True
+            clean_terminal()
+        elif value.lower() == "n" or value.lower() == "no":
+            decision = False
+            clean_terminal()
+        else:
+            clean_terminal()
+            print("Type a valid indicator!")
+
+    return indicators_list
